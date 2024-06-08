@@ -27,6 +27,11 @@ public abstract class UIWindow : MonoBehaviour
         _canvasGroup.interactable = true;
     }
 
+    public void PlayOnClickSound()
+    {
+        _eventBus.OnClick.Invoke();
+    }
+
     protected virtual void OnEndOpenAnimation()
     {
 

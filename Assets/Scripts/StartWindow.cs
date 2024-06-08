@@ -13,5 +13,6 @@ public class StartWindow : UIWindow
     public void OnClickNextButton()
     {
         _eventBus.OnClickNextButton?.Invoke();
+        PlayOnClickSound();
     }
 }

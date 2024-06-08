@@ -47,7 +47,8 @@ public class SoundController : MonoBehaviour
 
     public void PlayClick()
     {
-        _soundAudioSource.Play();
+        if(IsSoundsEnabled)
+            _soundAudioSource.Play();
     }
 
     private void SetEvents()

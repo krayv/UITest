@@ -15,10 +15,12 @@ public class MainWindow : UIWindow
     public void OnClickRestartButton()
     {
         _eventBus.OnClickRestartButton.Invoke();
+        PlayOnClickSound();
     }
 
     public void OnClickSettingsButton()
     {
         _eventBus.OnClickSettingsButton.Invoke();
+        PlayOnClickSound();
     }
 }

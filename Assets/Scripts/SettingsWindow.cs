@@ -23,15 +23,18 @@ public class SettingsWindow: UIWindow
     private void OnToggleSound(bool value)
     {
         _eventBus.OnToggleSound?.Invoke(value);
+        PlayOnClickSound();
     }
 
     private void OnToggleMusic(bool value)
     {
         _eventBus.OnToggleMusic?.Invoke(value);
+        PlayOnClickSound();
     }
 
     public void OnClickCloseButton()
     {
         _eventBus.OnClickCloseSettingButton.Invoke();
+        PlayOnClickSound();
     }
 }
