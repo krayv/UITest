@@ -10,6 +10,7 @@ public class LoadSceneController : MonoBehaviour
     public void Init(EventBus eventBus)
     {
         _eventBus = eventBus;
+        SetEvents();
     }
 
     private void SetEvents()

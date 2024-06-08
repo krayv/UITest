@@ -7,6 +7,10 @@ public abstract class UIWindow : MonoBehaviour
     private AnimationConfig _openAnimation;
     [SerializeField]
     private AnimationConfig _closeAnimation;
+    [SerializeField]
+    private CanvasGroup _canvasGroup;
+
+    public CanvasGroup CanvasGroup => _canvasGroup;
 
     protected EventBus _eventBus;
 
@@ -17,9 +21,10 @@ public abstract class UIWindow : MonoBehaviour
 
     public void Open(Action callback)
     {
-        callback += OnEndCloseAnimation;
+        callback += OnEndOpenAnimation;
         gameObject.SetActive(true);
-        _openAnimation.Play(gameObject, callback);
+        _openAnimation.Play(this, callback);
+        _canvasGroup.interactable = true;
     }
 
     protected virtual void OnEndOpenAnimation()
@@ -30,7 +35,8 @@ public abstract class UIWindow : MonoBehaviour
     public void Close(Action callback)
     {
         callback += OnEndCloseAnimation;
-        _openAnimation.Play(gameObject, callback);
+        _closeAnimation.Play(this, callback);
+        _canvasGroup.interactable = false;
     }
 
     protected virtual void OnEndCloseAnimation()

@@ -64,8 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f375cd12fddb1694ca92c9c7a47d4fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _openAnimation: {fileID: 0}
-  _closeAnimation: {fileID: 0}
+  _openAnimation: {fileID: 11400000, guid: 823b55918f64b884dacb6f4d715613de, type: 2}
+  _closeAnimation: {fileID: 11400000, guid: a0225a65cba59b546a5a0969141a1c87, type: 2}
+  _canvasGroup: {fileID: 7928020458307800843}
   _nextButton: {fileID: 535139568836613189}
 --- !u!1 &3358003053671540715
 GameObject:

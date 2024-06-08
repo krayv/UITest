@@ -142,8 +142,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab39d500b4803948b00610df13cd4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _openAnimation: {fileID: 0}
-  _closeAnimation: {fileID: 0}
+  _openAnimation: {fileID: 11400000, guid: 823b55918f64b884dacb6f4d715613de, type: 2}
+  _closeAnimation: {fileID: 11400000, guid: a0225a65cba59b546a5a0969141a1c87, type: 2}
+  _canvasGroup: {fileID: 2550531174190115171}
+  _soundToggle: {fileID: 2768570495845114527}
+  _musicToggle: {fileID: 3037445822707713507}
+  _closeButton: {fileID: 6398429245000027835}
 --- !u!1 &698010808735865574
 GameObject:
   m_ObjectHideFlags: 0

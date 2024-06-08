@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    [SerializeField]
     private List<UIWindow> _windows;
 
     private EventBus _eventBus;
 
     private UIWindow _currentWindow;
-
 
     public void OpenWindow<T>(Action callback) where T : UIWindow
     {
@@ -25,7 +25,9 @@ public class UIController : MonoBehaviour
     public void CloseCurrentWindow(Action callback)
     {
         if (_currentWindow != null)
+        {
             _currentWindow.Close(callback);
+        }
         else
         {
             callback.Invoke();
@@ -89,6 +91,9 @@ public class UIController : MonoBehaviour
     private void OnClickCloseSettingsButton()
     {
         if (_currentWindow is SettingsWindow)
-            CloseCurrentWindow(() => { });
+        {
+            OpenWindow<MainWindow>(() => { });
+        }
+
     }
 }
