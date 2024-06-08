@@ -10,6 +10,24 @@ public class SettingsWindow: UIWindow
     private void Awake()
     {
         _closeButton.onClick.AddListener(OnClickCloseButton);
+        _musicToggle.onValueChanged.AddListener(OnToggleMusic);
+        _soundToggle.onValueChanged.AddListener(OnToggleSound);
+    }
+
+    protected void OnEnable()
+    {
+        _musicToggle.SetIsOnWithoutNotify(SoundController.IsMusicEnabled);
+        _soundToggle.SetIsOnWithoutNotify(SoundController.IsSoundsEnabled);
+    }
+
+    private void OnToggleSound(bool value)
+    {
+        _eventBus.OnToggleSound?.Invoke(value);
+    }
+
+    private void OnToggleMusic(bool value)
+    {
+        _eventBus.OnToggleMusic?.Invoke(value);
     }
 
     public void OnClickCloseButton()
